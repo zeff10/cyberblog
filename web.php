@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BMIController;
+use App\Http\Controllers\FormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +13,7 @@ use App\Http\Controllers\BMIController;
 |
 */
 
-Route::get('/bmi', function () {
-    return view('Userinfo');
+Route::get('/form', function () {
+    return view('Form');
 });
-
-Route::post('/calculatebmi',[BMIController::class, 'calBMI'])->name('calculate');
+Route::post('/submit-form', [FormController::class, 'handleForm'])->name('submit.form');
